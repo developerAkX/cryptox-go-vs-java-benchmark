@@ -6,7 +6,14 @@ A benchmark comparing Go (Fiber + raw SQL) vs Java (Spring Boot + JPA) for crypt
 
 > **Go achieved 9,995 RPS with 2.2ms latency while Java maxed out at 1,108 RPS with 100% errors under the same load.**
 
-📊 **[View Full Benchmark Results →](results/mac/RESULTS.md)**
+### 📊 Test Results
+
+| Environment | Go RPS | Java RPS | Go Advantage | Details |
+|-------------|--------|----------|--------------|---------|
+| **Mac M4 Pro (14 cores)** | 9,995 | 1,108 | 9x faster | [View Results](results/mac/RESULTS.md) |
+| **EC2 ARM64 (2 vCPU)** | 1,636 | 402 | 4x faster | [View Results](results/ec2/RESULTS.md) |
+
+### Mac Benchmark (Local - Best Performance)
 
 | Metric | Go (Fiber) | Java (Virtual Threads) | Go Advantage |
 |--------|------------|------------------------|--------------|
