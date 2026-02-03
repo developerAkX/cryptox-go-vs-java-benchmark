@@ -2,11 +2,61 @@
 
 This guide explains how to set up and run the Go and Java crypto exchange benchmarks on an Ubuntu EC2 instance.
 
+## Recommended AWS Architecture
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                    Your Local Machine (Mac/Linux)                 │
+│                          Running k6                               │
+└──────────────────────────┬───────────────────────────────────────┘
+                           │ Internet
+              ┌────────────┴────────────┐
+              ▼                         ▼
+    ┌─────────────────┐       ┌─────────────────┐
+    │  Go Exchange    │       │  Java Exchange  │
+    │   Port: 8080    │       │   Port: 8081    │
+    │ (same EC2 box)  │       │ (same EC2 box)  │
+    └────────┬────────┘       └────────┬────────┘
+             │                         │
+             └───────────┬─────────────┘
+                         ▼
+            ┌─────────────────────────┐
+            │   PostgreSQL (Docker)   │
+            │      Port: 5432         │
+            │     (same EC2 box)      │
+            └─────────────────────────┘
+```
+
+## EC2 Instance Sizing Guide
+
+| Instance Type | vCPU | RAM | Architecture | Expected Go RPS | Expected Java RPS | Cost/Hour |
+|---------------|------|-----|--------------|-----------------|-------------------|-----------|
+| t4g.medium | 2 | 4GB | ARM64 | ~1,500 | ~400 | ~$0.034 |
+| t4g.xlarge | 4 | 16GB | ARM64 | ~4,000 | ~2,000 | ~$0.134 |
+| c6g.xlarge | 4 | 8GB | ARM64 | ~6,000 | ~3,000 | ~$0.136 |
+| c6g.2xlarge | 8 | 16GB | ARM64 | ~10,000+ | ~6,000+ | ~$0.272 |
+| c5.xlarge | 4 | 8GB | x86_64 | ~6,000 | ~4,000 | ~$0.170 |
+| c5.2xlarge | 8 | 16GB | x86_64 | ~10,000+ | ~8,000+ | ~$0.340 |
+
+> **Recommendation:** For testing, use `t4g.medium` (ARM64) - cheapest option. For accurate benchmarks, use `c6g.xlarge` or higher.
+
+## Cost Estimate (Full Benchmark Setup)
+
+| Resource | Type | Cost/Hour |
+|----------|------|-----------|
+| Application Server | t4g.medium | ~$0.034 |
+| **Total (minimal)** | | **~$0.034/hour** |
+
+| Resource | Type | Cost/Hour |
+|----------|------|-----------|
+| Application Server | c6g.2xlarge | ~$0.272 |
+| **Total (production)** | | **~$0.272/hour** |
+
 ## Prerequisites
 
 - Ubuntu 22.04 LTS (or Amazon Linux 2023)
-- EC2 instance type: `c5.xlarge` (4 vCPU, 8GB RAM) recommended
-- Security Group: Open ports **8080**, **8081**, **5432**
+- EC2 instance type: `t4g.medium` (minimum) or `c6g.xlarge` (recommended)
+- Security Group: Open ports **22** (SSH), **8080** (Go), **8081** (Java)
 
 ## Quick Setup
 
@@ -38,7 +88,17 @@ java -version
 
 **Log out and back in** for Docker group changes to take effect.
 
-### 3. Copy Files from Mac
+## Using Git Clone (Recommended)
+
+Instead of copying files manually, you can clone the repository directly on EC2:
+
+```bash
+# On EC2
+git clone https://github.com/developerAkX/cryptox-go-vs-java-benchmark.git
+cd cryptox-go-vs-java-benchmark
+```
+
+## Alternative: Copy Files from Mac
 
 On your Mac, run:
 
