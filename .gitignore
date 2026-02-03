@@ -1,0 +1,34 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Build artifacts
+go-exchange/go-exchange
+java-exchange/target/
+
+# Dependencies
+node_modules/
+
+# Python virtual environment
+.venv/
+
+# Docker
+*.log
+
+# Test results (old format)
+results-*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+~$*
+*.tmp
+
+# Security - Never commit keys
+*.pem
+*.key
+.env
+.env.*

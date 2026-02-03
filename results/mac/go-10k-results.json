@@ -1,0 +1,314 @@
+{
+  "metrics": {
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1799164,
+        "rate": 9995.276592870472
+      }
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0,
+        "min": 0,
+        "med": 0,
+        "max": 0,
+        "p(90)": 0,
+        "p(95)": 0
+      }
+    },
+    "vus_max": {
+      "values": {
+        "max": 916,
+        "value": 916,
+        "min": 500
+      },
+      "type": "gauge",
+      "contains": "default"
+    },
+    "http_req_blocked": {
+      "contains": "time",
+      "values": {
+        "p(90)": 0.002,
+        "p(95)": 0.002,
+        "avg": 0.001143084232436387,
+        "min": 0,
+        "med": 0.001,
+        "max": 1.688
+      },
+      "type": "trend"
+    },
+    "match_orders_latency": {
+      "contains": "time",
+      "values": {
+        "avg": 4.230372578230333,
+        "min": 0.8,
+        "med": 2.439,
+        "max": 161.253,
+        "p(90)": 8.38,
+        "p(95)": 11.910849999999988
+      },
+      "type": "trend"
+    },
+    "data_sent": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 270274266,
+        "rate": 1501511.8380564793
+      }
+    },
+    "dropped_iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 837,
+        "rate": 4.6499632652902045
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1799164,
+        "rate": 9995.276592870472
+      }
+    },
+    "get_orderbook_latency": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.256,
+        "med": 0.535,
+        "max": 154.533,
+        "p(90)": 3.667,
+        "p(95)": 6.197,
+        "avg": 1.7800932639026044
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(95)": 8.525,
+        "avg": 2.2160888912851235,
+        "min": 0.131,
+        "med": 0.736,
+        "max": 161.253,
+        "p(90)": 4.322
+      }
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.131,
+        "med": 0.736,
+        "max": 161.253,
+        "p(90)": 4.322,
+        "p(95)": 8.525,
+        "avg": 2.2160888912851235
+      },
+      "thresholds": {
+        "p(90)<500": {
+          "ok": true
+        },
+        "p(95)<1000": {
+          "ok": true
+        },
+        "p(99)<2000": {
+          "ok": true
+        }
+      }
+    },
+    "iteration_duration": {
+      "contains": "time",
+      "values": {
+        "med": 0.772791,
+        "max": 161.286833,
+        "p(90)": 4.3635837,
+        "p(95)": 8.56804549999998,
+        "avg": 2.251017727038347,
+        "min": 0.150125
+      },
+      "type": "trend"
+    },
+    "errors": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "fails": 1799164,
+        "rate": 0,
+        "passes": 0
+      },
+      "thresholds": {
+        "rate<0.05": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 0.017,
+        "p(95)": 0.03,
+        "avg": 0.009810718200177293,
+        "min": 0.002,
+        "med": 0.007,
+        "max": 3.164
+      }
+    },
+    "http_req_failed": {
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 1799164
+      },
+      "type": "rate"
+    },
+    "get_balance_latency": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(90)": 2.717,
+        "p(95)": 5.69554999999998,
+        "avg": 1.5153687734320938,
+        "min": 0.131,
+        "med": 0.369,
+        "max": 154.553
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 1799164,
+        "fails": 0
+      }
+    },
+    "vus": {
+      "values": {
+        "max": 639,
+        "value": 6,
+        "min": 3
+      },
+      "type": "gauge",
+      "contains": "default"
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 2340786340,
+        "rate": 13004265.821855564
+      }
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.005232435731335375,
+        "min": 0.001,
+        "med": 0.003,
+        "max": 3.696,
+        "p(90)": 0.007,
+        "p(95)": 0.012
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 2.201045737353653,
+        "min": 0.125,
+        "med": 0.723,
+        "max": 161.241,
+        "p(90)": 4.302,
+        "p(95)": 8.501
+      }
+    },
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.00005726715296660034,
+        "min": 0,
+        "med": 0,
+        "max": 0.86,
+        "p(90)": 0,
+        "p(95)": 0
+      }
+    },
+    "create_order_latency": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0.303,
+        "med": 0.918,
+        "max": 158.375,
+        "p(90)": 4.062,
+        "p(95)": 7.69,
+        "avg": 2.229703595372778
+      }
+    }
+  },
+  "root_group": {
+    "checks": [
+      {
+        "name": "get balance status is 200",
+        "path": "::get balance status is 200",
+        "id": "098535e362eb0b8a22e2e3c27da4b31d",
+        "passes": 450770,
+        "fails": 0
+      },
+      {
+        "fails": 0,
+        "name": "get orderbook status is 200",
+        "path": "::get orderbook status is 200",
+        "id": "a8aa67e570529638b801ff8a5cba4d9d",
+        "passes": 539051
+      },
+      {
+        "name": "create order status is 201",
+        "path": "::create order status is 201",
+        "id": "96e695ad9ef1e3be1c36e5117eed56da",
+        "passes": 539499,
+        "fails": 0
+      },
+      {
+        "fails": 0,
+        "name": "match orders status is 200",
+        "path": "::match orders status is 200",
+        "id": "b6c3e0a6622868b7f6d9cf31025f4f54",
+        "passes": 269844
+      }
+    ],
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": []
+  },
+  "options": {
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "max",
+      "p(90)",
+      "p(95)"
+    ],
+    "summaryTimeUnit": "",
+    "noColor": false
+  },
+  "state": {
+    "isStdOutTTY": false,
+    "isStdErrTTY": false,
+    "testRunDurationMs": 180001.422
+  }
+}

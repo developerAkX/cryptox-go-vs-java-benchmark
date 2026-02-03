@@ -1,0 +1,56 @@
+server:
+  port: 8081
+  tomcat:
+    threads:
+      max: 400
+      min-spare: 50
+    accept-count: 200
+    max-connections: 10000
+
+spring:
+  application:
+    name: java-exchange
+  
+  # Enable Virtual Threads (Java 21+)
+  threads:
+    virtual:
+      enabled: true
+  
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/cryptox}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    hikari:
+      maximum-pool-size: 200
+      minimum-idle: 50
+      connection-timeout: 5000
+      idle-timeout: 300000
+      max-lifetime: 900000
+      leak-detection-threshold: 60000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+        generate_statistics: false
+        jdbc:
+          batch_size: 100
+          fetch_size: 100
+        order_inserts: true
+        order_updates: true
+        query:
+          in_clause_parameter_padding: true
+        connection:
+          provider_disables_autocommit: true
+
+logging:
+  level:
+    root: WARN
+    com.cryptox: INFO
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql: WARN
