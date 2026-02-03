@@ -8,10 +8,11 @@ A benchmark comparing Go (Fiber + raw SQL) vs Java (Spring Boot + JPA) for crypt
 
 ### 📊 Test Results
 
-| Environment | Go RPS | Java RPS | Go Advantage | Details |
-|-------------|--------|----------|--------------|---------|
-| **Mac M4 Pro (14 cores)** | 9,995 | 1,108 | 9x faster | [View Results](results/mac/RESULTS.md) |
-| **EC2 ARM64 (2 vCPU)** | 1,636 | 402 | 4x faster | [View Results](results/ec2/RESULTS.md) |
+| Environment | Target RPS | Go RPS | Java RPS | Go Advantage | Details |
+|-------------|------------|--------|----------|--------------|---------|
+| **Mac M4 Pro (14 cores)** | 10,000 | 9,995 | 1,108 | 9x faster | [View Results](results/mac/RESULTS.md) |
+| **EC2 ARM64 (2 vCPU)** | 10,000 | 1,636 | 402 | 4x faster | [View Results](results/ec2/RESULTS.md) |
+| **EC2 ARM64 (2 vCPU)** | 1,500 | 1,339 | 308 | 4x faster | [View Results](results/ec2-1500rps/RESULTS.md) |
 
 ### Mac Benchmark (Local - Best Performance)
 
